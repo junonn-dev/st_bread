@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DirectShowLib-2005">
-      <HintPath>..\packages\netDirectShow\DirectShowLib-2005.dll</HintPath>
+      <HintPath>..\netDirectShow\DirectShowLib-2005.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.17.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -204,8 +204,8 @@
     <Compile Include="Inter_Table.cs" />
     <Compile Include="Kiosk_Bill\clsKiosk_Bill.cs" />
     <Compile Include="Kiosk_Bill\clsKiosk_Item.cs" />
-    <Compile Include="LOG\clsLog.cs" />
     <Compile Include="Net\clsNetTest.cs" />
+    <Compile Include="OutPut\clsLog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serial\Inter_Serial.cs" />
@@ -696,6 +696,7 @@
     <None Include="Resources\nfc_tag.jpg" />
     <None Include="Resources\image_6526.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
