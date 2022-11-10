@@ -7,4 +7,4 @@
 	5. 판매시작
 	6. 시재금 입력 또는 바로 판매시작
 
-
+#### 빌드시 netDirectShow 폴더내의 DirectShowLib-2005.dll 파일을참조에 추가해주세요.
