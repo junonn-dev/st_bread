@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9FCE634-281B-4149-B047-0A2E86F86D74}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>st_bread</RootNamespace>
+    <AssemblyName>st_bread</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Burn Disk.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DirectShowLib-2005">
+      <HintPath>..\packages\netDirectShow\DirectShowLib-2005.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.17.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bill\clsBill.cs" />
+    <Compile Include="Bill\clsBill_Items.cs" />
+    <Compile Include="Bill\clsbill_payments.cs" />
+    <Compile Include="Bill\Inter_Bill.cs" />
+    <Compile Include="clsDbCon.cs" />
+    <Compile Include="clsFile.cs" />
+    <Compile Include="clsGr.cs" />
+    <Compile Include="clsInfoSound.cs" />
+    <Compile Include="clsInputBox.cs" />
+    <Compile Include="clsItems.cs" />
+    <Compile Include="clsMart.cs" />
+    <Compile Include="clsMemad.cs" />
+    <Compile Include="clsOrderType2_Layer.cs" />
+    <Compile Include="clsPay.cs" />
+    <Compile Include="clsPos.cs" />
+    <Compile Include="clsPosOpen.cs" />
+    <Compile Include="clsPrint.cs" />
+    <Compile Include="clsPrintSet.cs" />
+    <Compile Include="clsRecipInfo.cs" />
+    <Compile Include="clsSaleStat.cs" />
+    <Compile Include="clsSavePay.cs" />
+    <Compile Include="clsSContoller.cs" />
+    <Compile Include="clsTable.cs" />
+    <Compile Include="Common\clsCommonStatic.cs" />
+    <Compile Include="Common\clsEnum.cs" />
+    <Compile Include="Common\clsMachine_Info.cs" />
+    <Compile Include="Common\clsSetting.cs" />
+    <Compile Include="Common\clsStaticString.cs" />
+    <Compile Include="DATETIME\clsDateTime.cs" />
+    <Compile Include="DB\clsDBExcute.cs" />
+    <Compile Include="DB\clsDBString.cs" />
+    <Compile Include="DB\clsDBUtil.cs" />
+    <Compile Include="DB\clsOracleConnector.cs" />
+    <Compile Include="Encryption\clsEncryption.cs" />
+    <Compile Include="Extends\clsForm_Extends.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extends\clsNativeMethods.cs" />
+    <Compile Include="Extends\CoTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBill.Designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCancel.designer.cs">
+      <DependentUpon>frmCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCash2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCash2.Designer.cs">
+      <DependentUpon>frmCash2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashIO.Designer.cs">
+      <DependentUpon>frmCashIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig2.Designer.cs">
+      <DependentUpon>frmConfig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomDisplay.Designer.cs">
+      <DependentUpon>frmCustomDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExit.Designer.cs">
+      <DependentUpon>frmExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessage.designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNFC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNFC.Designer.cs">
+      <DependentUpon>frmNFC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder_Type2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder_Type2.designer.cs">
+      <DependentUpon>frmOrder_Type2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSerialSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSerialSetting.designer.cs">
+      <DependentUpon>frmSerialSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStartSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartSale.Designer.cs">
+      <DependentUpon>frmStartSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inter_Table.cs" />
+    <Compile Include="Kiosk_Bill\clsKiosk_Bill.cs" />
+    <Compile Include="Kiosk_Bill\clsKiosk_Item.cs" />
+    <Compile Include="LOG\clsLog.cs" />
+    <Compile Include="Net\clsNetTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serial\Inter_Serial.cs" />
+    <Compile Include="Serial\Inter_Set.cs" />
+    <Compile Include="uscButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscButton.designer.cs">
+      <DependentUpon>uscButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uscCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscCalendar.Designer.cs">
+      <DependentUpon>uscCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uscGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscGroup.designer.cs">
+      <DependentUpon>uscGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uscMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscMenu.designer.cs">
+      <DependentUpon>uscMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uscNum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscNum.designer.cs">
+      <DependentUpon>uscNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usc_Table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usc_Table.Designer.cs">
+      <DependentUpon>usc_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van\clsJTNet.cs" />
+    <Compile Include="Van\clsJTNet_SEQD.cs" />
+    <Compile Include="Van\clsVan.cs" />
+    <Compile Include="Van\clsVanAuth.cs" />
+    <Compile Include="Van\clsVanKovan.cs" />
+    <Compile Include="Van\clsVanRep.cs" />
+    <Compile Include="Van\Inter_Result.cs" />
+    <Compile Include="XML\clsDataSetToXml.cs" />
+    <EmbeddedResource Include="Extends\clsForm_Extends.resx">
+      <DependentUpon>clsForm_Extends.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCancel.resx">
+      <DependentUpon>frmCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCash2.resx">
+      <DependentUpon>frmCash2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashIO.resx">
+      <DependentUpon>frmCashIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig2.resx">
+      <DependentUpon>frmConfig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomDisplay.resx">
+      <DependentUpon>frmCustomDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExit.resx">
+      <DependentUpon>frmExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNFC.resx">
+      <DependentUpon>frmNFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder_Type2.resx">
+      <DependentUpon>frmOrder_Type2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSerialSetting.resx">
+      <DependentUpon>frmSerialSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartSale.resx">
+      <DependentUpon>frmStartSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="uscButton.resx">
+      <DependentUpon>uscButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uscCalendar.resx">
+      <DependentUpon>uscCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uscGroup.resx">
+      <DependentUpon>uscGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uscMenu.resx">
+      <DependentUpon>uscMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uscNum.resx">
+      <DependentUpon>uscNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usc_Table.resx">
+      <DependentUpon>usc_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cancel02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_setting01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_setting07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_setting04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_setting03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_setting06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype01_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype02_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype03.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_btntype03_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_memberbox.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_message.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_paymentbox.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_top.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_totalbox.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_card.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_card_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cash_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_next.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_next_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_next02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_next02_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_order.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_order_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_pre.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_pre_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_pre02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_pre02_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_receipt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_receipt_over.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_bi.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_bullet.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_hr.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_th.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_user.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_key09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_keydelone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_keydeltotal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sorry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_payno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5874-info-sign-clip-art.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_pre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_reprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_price.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_50000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_10000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_5000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_cash1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_cash2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btns_setting01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btns_setting02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btns_setting03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btns_setting031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Celebration_Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector - Celebration Frame 01 by DragonArt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector - Celebration Frame 05 by DragonArt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3556746072_esJx3F0G_image.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\빠아앙가로고.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_recipt01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_recipt02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_recipt03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_receipt_no.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Burn Disk.ico" />
+    <Content Include="JTPosSeqDmDll.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\person_color.png" />
+    <None Include="Resources\p_test.png" />
+    <None Include="Resources\person_1.png" />
+    <None Include="Resources\view-restore.png" />
+    <None Include="Resources\view-refresh-3.png" />
+    <None Include="Resources\system-shutdown-6.png" />
+    <None Include="Resources\go-home-4.png" />
+    <None Include="Resources\btn_cancel2.png" />
+    <None Include="Resources\bg_amt.png" />
+    <None Include="Resources\btn_Out.png" />
+    <None Include="Resources\btn_In.png" />
+    <None Include="Resources\btn_cancel1.png" />
+    <None Include="Resources\nfc_tag.jpg" />
+    <None Include="Resources\image_6526.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
